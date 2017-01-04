@@ -16,7 +16,7 @@ const config = {
   },
 
   module: {
-    // Replaces webpack 1 'loaders'
+    // Replaces webpack1 'loaders'
     rules: [
       // Babel loader
       {
@@ -32,6 +32,19 @@ const config = {
           loader: 'css-loader'
         }),
         test: /\.css$/
+      },
+      // Img loader
+      {
+        test: /\.(jpe?g|png|gif|svg)$/,
+        use: [
+          // Use object in order to include options
+          {
+            loader: 'url-loader',
+            // Set image size limit
+            options: { limit: 40000 }
+          },
+          'image-webpack-loader'
+        ]
       }
     ]
   },
