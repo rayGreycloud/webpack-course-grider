@@ -1,5 +1,7 @@
 // Needed to create absolute path for output
 const path = require('path');
+// Import plugin
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 // Basic config for webpack and loaders
 const config = {
@@ -26,11 +28,16 @@ const config = {
       },
       // CSS loader
       {
-        use: ['style-loader', 'css-loader'],
+        loader: ExtractTextPlugin.extract({
+          loader: 'css-loader'
+        }),
         test: /\.css$/
       }
     ]
-  }
+  },
+  plugins: [
+    new ExtractTextPlugin('style.css')
+  ]
 };
 // Export it
 module.exports = config;
