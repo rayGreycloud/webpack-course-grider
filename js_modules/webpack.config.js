@@ -16,13 +16,18 @@ const config = {
   module: {
     // Replaces webpack 1 'loaders'
     rules: [
-      // first loader
+      // Babel loader
       {
         // designate loader
         use: 'babel-loader',
         // Filter for files to process
         test: /\.js$/
 
+      },
+      // CSS loader
+      {
+        use: ['style-loader', 'css-loader'],
+        test: /\.css$/
       }
     ]
   }

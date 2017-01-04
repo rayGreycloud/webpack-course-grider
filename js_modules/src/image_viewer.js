@@ -1,3 +1,5 @@
+// Add css file
+import '../styles/image_viewer.css';
 // Create image element
 const image = document.createElement('img');
 // Set img src
