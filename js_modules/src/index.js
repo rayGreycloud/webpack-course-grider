@@ -1,4 +1,4 @@
-const sum = require('./sum');
+import sum from './sum';
 
 let answer = sum(4, 6);
 
