@@ -63,11 +63,25 @@
 /******/ 	__webpack_require__.p = "";
 
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 1);
+/******/ 	return __webpack_require__(__webpack_require__.s = 2);
 /******/ })
 /************************************************************************/
 /******/ ([
 /* 0 */
+/***/ function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+// Create image element
+var image = document.createElement('img');
+// Set img src
+image.src = 'http://lorempixel.com/400/400';
+// Append img tag to body
+document.body.appendChild(image);
+
+/***/ },
+/* 1 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -83,19 +97,24 @@ var sum = function sum(a, b) {
 exports.default = sum;
 
 /***/ },
-/* 1 */
+/* 2 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var _sum = __webpack_require__(0);
+var _sum = __webpack_require__(1);
 
 var _sum2 = _interopRequireDefault(_sum);
 
+__webpack_require__(0);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+// Import other js file for use here
 var answer = (0, _sum2.default)(4, 6);
+// Not set to variable because only need to run code
+
 
 console.log(answer);
 
