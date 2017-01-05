@@ -1,19 +1,10 @@
-// Import images
-import big from '../assets/big.jpg';
+//  Refactored for code-splitting demo 
 import small from '../assets/small.jpg';
-// Add css file
 import '../styles/image_viewer.css';
 
-// Create image element
-const image = document.createElement('img');
-// Set img src
-image.src = small;
-// Append img tag to body
-document.body.appendChild(image);
+export default () => {
+  const image = document.createElement('img');
+  image.src = small;
 
-// Create image element
-const bigImage = document.createElement('img');
-// Set img src
-bigImage.src = big;
-// Append img tag to body
-document.body.appendChild(bigImage);
+  document.body.appendChild(image);
+};

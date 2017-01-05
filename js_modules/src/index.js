@@ -1,8 +1,15 @@
-// Import other js file for use here
-import sum from './sum';
-// Not set to variable because only need to run code
-import './image_viewer';
+const button = document.createElement('button');
+button.innerText = 'Click me';
 
-let answer = sum(4, 6);
+// Note lowercase not React onClick
+button.onclick = () => {
+  // Built-in method to fetch modules
+  // Automatically enables webpack code-splitting
+  System.import('./image_viewer')
+    .then(module => {
+      // Calls code from image_viewer
+      module.default();
+    });
+};
 
-console.log(answer);
+document.body.appendChild(button);

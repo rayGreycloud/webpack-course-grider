@@ -9,16 +9,15 @@ const config = {
   entry: './src/index.js',
   // Where to put output file
   output: {
-    // Inside folder build
+    // Folder for build output
     path: path.resolve(__dirname, 'build'),
-    // Name file bundle.js
+    // output filename
     filename: 'bundle.js',
     // Needed for url-loader to create url for big image
     publicPath: 'build/'
   },
-
   module: {
-    // Replaces webpack1 'loaders'
+    // 'rules' replace webpack1 'loaders'
     rules: [
       // Babel loader
       {
@@ -26,7 +25,6 @@ const config = {
         use: 'babel-loader',
         // Filter for files to process
         test: /\.js$/
-
       },
       // CSS loader
       {
@@ -40,11 +38,13 @@ const config = {
         test: /\.(jpe?g|png|gif|svg)$/,
         use: [
           // Use object in order to include options
+            // Url loader to create correct paths
           {
             loader: 'url-loader',
             // Set image size limit
             options: { limit: 40000 }
           },
+          // Image loader/handler
           'image-webpack-loader'
         ]
       }
