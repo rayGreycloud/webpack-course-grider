@@ -12,7 +12,9 @@ const config = {
     // Inside folder build
     path: path.resolve(__dirname, 'build'),
     // Name file bundle.js
-    filename: 'bundle.js'
+    filename: 'bundle.js',
+    // Needed for url-loader to create url for big image
+    publicPath: 'build/'
   },
 
   module: {
